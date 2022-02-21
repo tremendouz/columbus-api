@@ -3,12 +3,12 @@ using System.Text.Json;
 
 namespace EmployeesApi.Services
 {
-    public class HttpService<U>
+    public class HttpService
     {
         private readonly HttpClient _httpClient;
-        private readonly ILogger<U> _logger;
+        private readonly ILogger<HttpService> _logger;
 
-        public HttpService(HttpClient httpClient, ILogger<U> logger)
+        public HttpService(HttpClient httpClient, ILogger<HttpService> logger)
         {
             _httpClient = httpClient;
             _logger = logger;

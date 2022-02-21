@@ -3,12 +3,12 @@ using Microsoft.AspNetCore.WebUtilities;
 
 namespace EmployeesApi.Services
 {
-    public class ColumbusService: HttpService<ColumbusService>, IColumbusService
+    public class ColumbusService: HttpService, IColumbusService
     {
         private readonly IConfiguration _configuration;
         private readonly string _employeesEndpoint;
 
-        public ColumbusService(HttpClient httpClient, ILogger<ColumbusService> logger, IConfiguration configuration) : base(httpClient, logger)
+        public ColumbusService(HttpClient httpClient, ILogger<HttpService> logger, IConfiguration configuration) : base(httpClient, logger)
         {
             _configuration = configuration;
             _employeesEndpoint = _configuration["EmployeesEndpoint"];
