@@ -28,11 +28,7 @@ namespace EmployeesApi.Controllers
                     _logger.LogError(response.ErrorMsg);
                     return StatusCode(StatusCodes.Status500InternalServerError);
                 }
-
-                if (response.Result == null)
-                {
-                    return NotFound();
-                }
+            
                 return Ok(response.Result);
             }
             catch (Exception ex)
@@ -55,10 +51,6 @@ namespace EmployeesApi.Controllers
                     return StatusCode(StatusCodes.Status500InternalServerError);
                 }
 
-                if (response.Result == null)
-                {
-                    return NotFound();
-                }
                 return Ok(response.Result);
             }
             catch (Exception ex)
